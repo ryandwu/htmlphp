@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // For example, you can use PDO for database interactions.
         
         // Replace the following lines with your database logic.
-        $pdo = new PDO('mysql:host=localhost;dbname=your_database', 'your_username', 'your_password');
+        $pdo = new PDO('mysql:host=143.198.98.121;dbname=your_database', 'your_username', 'your_password');
         // Your database operations here.
 
         // Redirect back to the contact form with a success message.
