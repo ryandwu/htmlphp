@@ -22,9 +22,9 @@ ini_set('display_errors', 1);
 
             // Create a database connection
             $servername = "localhost";  // Replace with your MySQL server name or IP address
-            $username = "ryandwu";         // Replace with your MySQL username
+            $username = "ryan";         // Replace with your MySQL username
             $password = "Databasepwd";     // Replace with your MySQL password
-            $database = "testdatabase";   // Replace with your MySQL database name
+            $database = "cashdealData";   // Replace with your MySQL database name
 
             $conn = new mysqli($servername, $username, $password, $database);
 
