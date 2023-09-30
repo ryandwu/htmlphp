@@ -58,7 +58,10 @@ ini_set('display_errors', 1);
         <label for="name">Name:</label>
         <input type="text" id="name" name="name"><br><br>
 
-        <label for="email">Email Address:</label>
+        <label for="phone">Phone:</label>
+        <input type="phone" id="phone" name="phone"><br><br>
+
+        <label for="email">Email:</label>
         <input type="email" id="email" name="email"><br><br>
 
         <label for="message">Message:</label>
