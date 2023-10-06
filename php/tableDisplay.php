@@ -98,7 +98,7 @@
             echo "<td>" . $row["Quantity"] . "</td>";
             echo "<td style='background-color: " . (($row["Quantity"] <= $row["LCL"]) ? "yellow" : "white") . "'>" . $row["LCL"] . "</td>";
             echo "<td>" . $row["Date"] . "</td>";
-            echo "<td>" . $row["Notes"] . "</td>";
+            echo "<td>" . $row["Note"] . "</td>";
             echo "</tr>";
         }
     } else {
