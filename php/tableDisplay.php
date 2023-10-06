@@ -35,12 +35,8 @@
 
     // Fetch data from the Rate table with sorting by Created_AT in descending order and limiting to 6 rows within the past 96 hours
     $rateSql = "SELECT * FROM Rate WHERE Created_AT >= '$timestamp96HoursAgo' ORDER BY Created_AT DESC LIMIT 100";
-
     $rateResult = $conn->query($rateSql);
-    
     ?>
-
-    
 
     <!-- Display the fetched data from Rate table as an HTML table -->
     <h2>Draw Rate</h2>
@@ -48,16 +44,18 @@
         <tr>
             <th>Location</th>
             <th>Item</th>
-            <th>Old_Quantity</th>
-            <th>Old_Date</th>
-            <th>New_Quantity</th>
-            <th>New_Date</th>
-            <th>Draw_Rate_Per_Wk</th>
-            <th>Created_AT</th>
+            <th>Last Quantity</th>
+            <th>Last Date</th>
+            <th>New Quantity</th>
+            <th>New Date</th>
+            <th>Draw/Wk</th>
+            <th>Date</th>
         </tr>
         <?php
         if ($rateResult->num_rows > 0) {
             while ($row = $rateResult->fetch_assoc()) {
+                // Debug statement to print the array
+                // print_r($row);
                 echo "<tr>";
                 echo "<td>" . $row["Location"] . "</td>";
                 echo "<td>" . $row["Item"] . "</td>";
@@ -66,7 +64,7 @@
                 echo "<td>" . $row["New_Quantity"] . "</td>";
                 echo "<td>" . $row["New_Date"] . "</td>";
                 echo "<td>" . $row["Draw_Rate_Per_Wk"] . "</td>";
-                echo "<td>" . $row["Created_AT"] . "</td>";
+                echo "<td>" . $row["Created_At"] . "</td>";
                 echo "</tr>";
             }
         } else {
@@ -82,13 +80,13 @@
         <th>Location</th>
         <th>Item</th>
         <th>Quantity</th>
-        <th>Low</th>
+        <th>LCL</th>
         <th>Date</th>
+        <th>Notes</th>
     </tr>
     <?php
     // Modify your SQL query to include ORDER BY
-    $sql = "SELECT * FROM Supply ORDER BY Item ASC"; // ASC for ascending order, DESC for descending order
-
+    $sql = "SELECT Location, Item, Quantity, LCL, Date, Notes FROM Supply ORDER BY CAST(SUBSTRING(Item, 1, 2) AS UNSIGNED), Item"; // ASC for ascending order, DESC for descending order
     // Execute the SQL query
     $SupplyResult = $conn->query($sql);
 
@@ -98,17 +96,16 @@
             echo "<td>" . $row["Location"] . "</td>";
             echo "<td>" . $row["Item"] . "</td>";
             echo "<td>" . $row["Quantity"] . "</td>";
-            echo "<td>" . $row["Low"] . "</td>";
+            echo "<td style='background-color: " . (($row["Quantity"] <= $row["LCL"]) ? "yellow" : "white") . "'>" . $row["LCL"] . "</td>";
             echo "<td>" . $row["Date"] . "</td>";
+            echo "<td>" . $row["Notes"] . "</td>";
             echo "</tr>";
         }
     } else {
-        echo "<tr><td colspan='4'>No data available</td></tr>";
+        echo "<tr><td colspan='5'>No data available</td></tr>";
     }
     ?>
 </table>
-
-    <!-- Rest of your HTML content here -->
 
     <?php
     // Close the database connection

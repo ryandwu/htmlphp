@@ -71,18 +71,22 @@ body {
 /* Adjust the width for the "Location" dropdown menu */
 .select-input.location {
     width: 100%; /* This ensures it takes the full width of the container */
+    vertical-align: middle; /* Align the notes field vertically */
 }
 
 /* Adjust the width for the "Item" dropdown menu */
-.select-input.item {
-    width: 100%; /* Adjust the width as needed */
+.form-input {
+    width: 90%;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+    margin-bottom: 10px; /* Add margin-bottom to create spacing between fields */
+    vertical-align: middle; /* Align the notes field vertically */
 }
-.select-input.quantity {
-    width: 100%; /* Adjust the width as needed */
-}
-.select-input.lcl {
-    width: 100%; /* Adjust the width as needed */
-}
+
 
 .table th {
     background-color: #f2f2f2;
