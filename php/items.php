@@ -1,6 +1,7 @@
 <?php
 $items = [
-    "1-toilet-paper" => ["label" => "1-toilet-paper", "LCL" =>19],
+    "0-nothing-burger" => ["label" => "0-nothing-burger", "LCL" =>0],
+    "1-toilet-paper" => ["label" => "1-toilet-paper", "LCL" =>20],
     "2-paper-towel" => ["label" => "2-paper-towel", "LCL" =>5],
     "3-big-trash-bag" => ["label" => "3-big-trash-bag", "LCL" =>14],
     "4-small-trash-bag" => ["label" => "4-small-trash-bag", "LCL" =>10],
@@ -47,45 +48,36 @@ $items = [
     "74-paper-towel" => ["label" => "74-paper-towel", "LCL" =>0],
 ];
 
-// Default number of entries
-$numberOfEntries = 5;
 
-// Check if a new number of entries is selected
-if (isset($_POST['entry_count'])) {
-    $numberOfEntries = (int)$_POST['entry_count'];
-}
+// Default number of entries
+$numberOfEntries = 5; 
 
 ?>
 
-<table class="select-input item">
-    <tr>
-        <th>Item</th>
-        <th>Quantity</th>
-        <th>LCL</th>
-        <th>Notes</th>
-    </tr>
+<table class="secondary-select">
+
     <?php
     // Generate item rows
     for ($i = 1; $i <= $numberOfEntries; $i++) {
         echo "<tr>";
 
         echo "<td>";
-        echo "<select id='Item$i' name='Item$i' class='form-input' onchange='updateLCL($i)'>";
+        echo "<select id='Item$i' name='Item$i' class='secondary-select' onchange='updateLCL($i)'>";
         foreach ($items as $key => $itemData) {
-            $selected = ($key == $Item) ? "selected" : "";
-            echo "<option value='$key' data-lcl='{$itemData["LCL"]}' $selected>{$itemData["label"]}</option>";
+            $selected = ($key == $_POST["Item$i"]) ? "selected" : ""; // Updated variable name to match script.js
+            echo "<option value='$key' data-lcl='{$itemData["LCL"]}' data-notes='{$itemData["Notes"]}' $selected>{$itemData["label"]}</option>";
         }
         echo "</select>";
         echo "</td>";
 
         echo "<td>";
-        // echo "<label for='Quantity$i'>Quantity $i:</label>";
-        echo "<select id='Quantity$i' name='Quantity$i' class='form-input'>";
+        echo "<select id='Quantity$i' name='Quantity$i' class='secondary-select'>";
         for ($j = 0; $j <= 200; $j++) {
             echo "<option value='$j'>$j</option>";
         }
         echo "</select>";
         echo "</td>";
+
 
         // Add a new column for "LCL" and populate it based on the selected item
         echo "<td>";
@@ -96,15 +88,8 @@ if (isset($_POST['entry_count'])) {
         echo "</select>";
         echo "</td>";
 
-        // Display the "Notes" input field with the MySQL "Notes" value
         echo "<td>";
         echo "<input type='text' id='Notes$i' name='Notes$i' class='form-input' value='{$itemDataArray[$i]["Notes"]}'>";
-        echo "</td>";
-
-        // Add plus and minus buttons
-        echo "<td>";
-        echo "<button onclick='addRow()'>+</button>";
-        echo "<button onclick='removeRow($i)'>-</button>";
         echo "</td>";
 
         echo "</tr>";
@@ -127,15 +112,4 @@ function updateLCL(i) {
     notesInput.value = selectedNotes;
 }
 
-function addRow() {
-    // JavaScript function to add a new row
-    // You can use this to add a row with the same structure as above
-    // Make sure to increase $numberOfEntries
-}
-
-function removeRow(i) {
-    // JavaScript function to remove a row by index
-    // You can use this to remove the row with the specified index
-    // Make sure to decrease $numberOfEntries
-}
 </script>
