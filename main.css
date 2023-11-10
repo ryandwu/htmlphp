@@ -201,6 +201,7 @@ body {
         flex-direction: row;
         justify-content: left;
         align-items: center;
+        padding: 10px
     }
     
     .secondary-select select {
