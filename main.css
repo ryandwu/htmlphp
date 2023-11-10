@@ -182,7 +182,7 @@ body {
     
         font-family:'Courier New', Courier, monospace;
         width: 60%;
-        padding: 10px;
+        padding: 15px;
         font-size: 14px;
         font-style: normal;
         font-weight: 400;
@@ -201,13 +201,14 @@ body {
         flex-direction: row;
         justify-content: left;
         align-items: center;
-        padding: 10px
+        padding: 15px;
     }
     
     .secondary-select select {
     
         font-family:'Courier New', Courier, monospace;
         width: 120%;
+        padding: 15px;
         font-size: 14px;
         font-style: normal;
         font-weight: 400;
