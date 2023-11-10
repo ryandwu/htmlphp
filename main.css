@@ -124,3 +124,177 @@ body {
         border: 1px solid #FF5A5F;
     }
 }
+
+
+/* Responsive CSS styles for iphone */
+@media (max-width: 1170px) {
+
+    body { 
+        background-color: #fff;
+        color: #0065F2;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        text-align: center;
+        margin: 0;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400; /* Change the font size for the entire website */
+    }
+    
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+    }
+
+    .header img {
+        width: 60px; /* Adjust the width to make the logo bigger */
+        height: auto; /* Maintain the aspect ratio */
+    }
+    
+    
+    .table-container {
+        padding: 10px 20px 20px 20px;
+        margin: 0 auto; /* Auto horizontal margin centers the element */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+    .primary-select{
+        width: 500px;
+        max-width: 100%;/* Optional: Add a maximum width to prevent it from getting too wide */
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+        gap: 10px;
+        max-width: 100%;
+        display: block; /* Change to block to center it horizontally */
+        margin: 0 auto; /* Margin auto horizontally centers the image */
+    }
+    
+    
+    /* Select input styles */
+    .primary-select-location {
+    
+        font-family:'Courier New', Courier, monospace;
+        width: 60%;
+        padding: 10px;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        font-style: normal;
+        border: 1px solid #0065F2;
+        border-radius: 5px;
+        transition: border-color 0.3s ease;
+        background-color: #ffff;
+    }
+    
+
+    
+    .secondary-select{
+        max-width: 100%;/* Optional: Add a maximum width to prevent it from getting too wide */
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+    }
+    
+    .secondary-select select {
+    
+        font-family:'Courier New', Courier, monospace;
+        width: 120%;
+        padding: 10px;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        border: 1px solid #0065F2;
+        border-radius: 5px;
+        transition: border-color 0.3s ease;
+        background-color: #ffff;
+    }
+    
+    .secondary-select input {
+    
+        font-family:'Courier New', Courier, monospace;
+        width: 30%;
+        padding: 10px;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        border: 1px solid #0065F2;
+        border-radius: 5px;
+        transition: border-color 0.3s ease;
+        background-color: #ffff;
+    }
+    
+    .table th {
+        background-color: #ffff;
+        font-weight: bold;
+        text-align: left;
+        border-radius: 5px;
+    }
+    
+    /* Alternate row background color */
+    .table tr:nth-child(even) {
+        background-color: #ffff;
+    }
+    
+    /* Table data styles */
+    .table td {
+        padding: 5px;
+    }
+    
+    /* Center-align text in the first column */
+    .table td:first-child {
+        text-align: center;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+    }
+    
+    /* Add borders to table cells */
+    .table, .table th, .table td {
+        text-align: center;
+        border-radius: 5px;
+    }
+    
+    /* Hover effect for table rows */
+    .table tr:hover {
+        background-color: #ffff;
+        
+    }
+    
+    
+    /* Button container styles */
+    .button-container {
+        text-align: center;
+        margin-top: 15px;
+        padding: 10px 20px;
+    }
+    
+    /* Submit button styles */
+    .button {
+        font-size: 14px; /* Adjust the font size to your preference */
+        font-family:'Courier New', Courier, monospace;
+        font-weight: 400;
+        color: #0065F2;
+        background-color: #ffff; /* Same background color for both buttons */
+        border: 1px solid #0065F2;
+        padding: 10px 30px; /* Adjust padding for button size */
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-decoration: none; /* Remove underlines from links */
+        display: inline-block; /* Display as a block element */
+        text-align: center;
+        margin-right: 10px; /* Add margin between buttons */
+        &:hover {
+            border: 1px solid #FF5A5F;
+        }
+    }
+
+}
