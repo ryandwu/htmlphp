@@ -47,6 +47,14 @@ $items = [
     "74-paper-towel" => ["label" => "74-paper-towel", "LCL" =>0],
 ];
 
+// Default number of entries
+$numberOfEntries = 5;
+
+// Check if a new number of entries is selected
+if (isset($_POST['entry_count'])) {
+    $numberOfEntries = (int)$_POST['entry_count'];
+}
+
 ?>
 
 <table class="select-input item">
@@ -58,7 +66,7 @@ $items = [
     </tr>
     <?php
     // Generate item rows
-    for ($i = 1; $i <= 5; $i++) {
+    for ($i = 1; $i <= $numberOfEntries; $i++) {
         echo "<tr>";
 
         echo "<td>";
@@ -92,6 +100,14 @@ $items = [
         echo "<td>";
         echo "<input type='text' id='Notes$i' name='Notes$i' class='form-input' value='{$itemDataArray[$i]["Notes"]}'>";
         echo "</td>";
+
+        // Add plus and minus buttons
+        echo "<td>";
+        echo "<button onclick='addRow()'>+</button>";
+        echo "<button onclick='removeRow($i)'>-</button>";
+        echo "</td>";
+
+        echo "</tr>";
     }
     ?>
 </table>
@@ -109,5 +125,17 @@ function updateLCL(i) {
     // Set the selected LCL in the LCL select element
     lclSelect.value = selectedLCL;
     notesInput.value = selectedNotes;
+}
+
+function addRow() {
+    // JavaScript function to add a new row
+    // You can use this to add a row with the same structure as above
+    // Make sure to increase $numberOfEntries
+}
+
+function removeRow(i) {
+    // JavaScript function to remove a row by index
+    // You can use this to remove the row with the specified index
+    // Make sure to decrease $numberOfEntries
 }
 </script>
