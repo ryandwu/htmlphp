@@ -39,15 +39,15 @@
     ?>
 
     <!-- Display the fetched data from Rate table as an HTML table -->
-    <h2>Draw Rate</h2>
-    <table class="table">
+    <h3 class="header">Draw Rate</h3>
+    <table class="table-display">
         <tr>
-            <th>Location</th>
+            <th>Loc</th>
             <th>Item</th>
-            <th>Last Quantity</th>
             <th>Last Date</th>
-            <th>New Quantity</th>
             <th>New Date</th>
+            <th>Last Qty</th>
+            <th>New Qty</th>
             <th>Draw/Wk</th>
             <th>Date</th>
         </tr>
@@ -59,10 +59,10 @@
                 echo "<tr>";
                 echo "<td>" . $row["Location"] . "</td>";
                 echo "<td>" . $row["Item"] . "</td>";
-                echo "<td>" . $row["Old_Quantity"] . "</td>";
                 echo "<td>" . $row["Old_Date"] . "</td>";
-                echo "<td>" . $row["New_Quantity"] . "</td>";
                 echo "<td>" . $row["New_Date"] . "</td>";
+                echo "<td>" . $row["Old_Quantity"] . "</td>";
+                echo "<td>" . $row["New_Quantity"] . "</td>";
                 echo "<td>" . $row["Draw_Rate_Per_Wk"] . "</td>";
                 echo "<td>" . $row["Created_At"] . "</td>";
                 echo "</tr>";
@@ -74,12 +74,12 @@
     </table>
 
     <!-- Display the fetched data from Supply table as an HTML table -->
-    <h2>Inventory Table</h2>
-<table class="table">
+    <h3 class="header">Inventory Table</h3>
+<table class="table-display">
     <tr>
-        <th>Location</th>
+        <th>Loc</th>
         <th>Item</th>
-        <th>Quantity</th>
+        <th>Qty</th>
         <th>LCL</th>
         <th>Date</th>
         <th>Notes</th>

@@ -12,6 +12,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 300;
     padding: 20px 165px 10px 165px;
 }
 
@@ -126,6 +129,49 @@ body {
 }
 
 
+
+/* Apply the styles to all tables with the "table-display" class */
+.table-display {
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    font-size: 8;
+    border-collapse: collapse;
+    width: 100%;
+    border: 2px solid black; /* Add a border to the table */
+    padding: 20px 20px;
+}
+
+/* Style the table header cells */
+.table-display th {
+    background-color: #f2f2f2;
+    border: 2px solid #000000; /* Add a border to the header cells */
+}
+
+/* Style the table rows */
+.table-display tr {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style the table data cells */
+.table-display td {
+    padding: 18px;
+    border: 2px solid #000000; /* Add a border to the data cells */
+}
+
+/* Optional: Style the alternate rows differently for better readability */
+.table-display tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Optional: Hover effect on table rows */
+.table-display tr:hover {
+    background-color: #e5e5e5;
+}
+
+
+
+
+
 /* Responsive CSS styles for iphone */
 @media (max-width: 1170px) {
 
@@ -231,44 +277,6 @@ body {
         background-color: #ffff;
     }
     
-    .table th {
-        background-color: #ffff;
-        font-weight: bold;
-        text-align: left;
-        border-radius: 5px;
-    }
-    
-    /* Alternate row background color */
-    .table tr:nth-child(even) {
-        background-color: #ffff;
-    }
-    
-    /* Table data styles */
-    .table td {
-        padding: 5px;
-    }
-    
-    /* Center-align text in the first column */
-    .table td:first-child {
-        text-align: center;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-    }
-    
-    /* Add borders to table cells */
-    .table, .table th, .table td {
-        text-align: center;
-        border-radius: 5px;
-    }
-    
-    /* Hover effect for table rows */
-    .table tr:hover {
-        background-color: #ffff;
-        
-    }
-    
-    
     /* Button container styles */
     .button-container {
         text-align: center;
@@ -296,5 +304,46 @@ body {
             border: 1px solid #FF5A5F;
         }
     }
+
+
+/* Apply the styles to all tables with the "table-display" class */
+.table-display {
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    font-size: 8;
+    border-collapse: collapse;
+    width: 100%;
+    border: 2px solid black; /* Add a border to the table */
+    padding: 20px 20px;
+}
+
+/* Style the table header cells */
+.table-display th {
+    background-color: #f2f2f2;
+    border: 2px solid #000000; /* Add a border to the header cells */
+}
+
+/* Style the table rows */
+.table-display tr {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style the table data cells */
+.table-display td {
+    padding: 18px;
+    border: 2px solid #000000; /* Add a border to the data cells */
+}
+
+/* Optional: Style the alternate rows differently for better readability */
+.table-display tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Optional: Hover effect on table rows */
+.table-display tr:hover {
+    background-color: #e5e5e5;
+}
+
+
 
 }
