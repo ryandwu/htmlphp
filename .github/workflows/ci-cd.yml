@@ -22,7 +22,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             # Navigate to your target directory on the VM
-            cd /var/www/wooloore
+            cd /var/www/inventoryAppPHP
 
             # Pull the latest changes from the repository
             git pull origin main
